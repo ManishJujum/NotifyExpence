@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-item lines="none">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()" style="color: white;">Back</ion-button>
+    </ion-buttons>
+  </ion-item>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <div class="main-header"></div>
+
+  <ion-grid>
+    <div class="cash-flow">
+      <img style="border-radius:69%; height: 10%; width: 36%; margin-left: -7px; margin-top: -18px;"
+        src="assets/image/copywriter-digital-avatar-generative-ai_934475-9260.jpg" />
+      <h3>Welcome, Manish Jujum</h3>
+    </div>
+
+    <ion-row class="ionlist">
+      <ion-col size="12">
+        <ion-list>
+          <ion-item class="ionitem">
+            <ion-label>
+              <h2>Phone</h2>
+              <p>+1 (555) 123-4567</p>
+            </ion-label>
+          </ion-item>
+
+          <ion-item class="ionitem">
+            <ion-label>
+              <h2>Email</h2>
+              <p>john.doe.com</p>
+            </ion-label>
+          </ion-item>
+
+          <ion-item class="ionitem">
+            <ion-label>
+              <h2>Address</h2>
+              <p>123 Main Street, New York, NY, USA</p>
+            </ion-label>
+          </ion-item>
+          <ion-item class="ionitem">
+            <ion-label>
+              <h2>Phone</h2>
+              <p>+1 (555) 123-4567</p>
+            </ion-label>
+          </ion-item>
+
+          <ion-item class="ionitem">
+            <ion-label>
+              <h2>Email</h2>
+              <p>john.doe.com</p>
+            </ion-label>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Modal for Editing Balance -->
+  <ion-modal trigger="open-modals">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Edit Balance</ion-title>
+          <ion-buttons slot="end">
+            <ion-button>X</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <form>
+          <div>
+            <ion-item>
+              <ion-label position="stacked">New Balance</ion-label>
+              <ion-input type="text" placeholder="Enter new balance"></ion-input>
+            </ion-item>
+          </div>
+          <ion-button type="submit">Update</ion-button>
+        </form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>
+
+<ion-footer></ion-footer>

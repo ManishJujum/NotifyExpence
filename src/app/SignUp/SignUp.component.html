@@ -1,0 +1,87 @@
+<!-- <ion-content [fullscreen]="true" color="light" class="login-content">
+  <div class="main-header"></div>
+  <ion-grid>
+    <ion-row class="ionlist">
+      <ion-col size="12">
+        <div class="signup-form-container">
+          <form (ngSubmit)="SignUp(SignUpForm.value)" #postForm="ngForm">
+            <div [formGroup]="SignUpForm">
+              <ion-item class="input-item">
+                <ion-label position="floating">Username</ion-label>
+                <ion-input formControlName="username"></ion-input>
+              </ion-item>
+            </div>
+      
+            <div [formGroup]="SignUpForm">
+              <ion-item class="input-item">
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+              </ion-item>
+            </div>
+      
+            <div [formGroup]="SignUpForm">
+              <ion-item class="input-item">
+                <ion-label position="floating">Confirm Password</ion-label>
+                <ion-input type="password" formControlName="confirmPassword"></ion-input>
+              </ion-item>
+            </div>
+            <br>
+            <ion-button type="submit" shape="round" expand="block" class="signup-button">Submit</ion-button>
+      
+            <div class="signup-link">
+              <p>Already have an account? <a (click)="Login()" class="signup-anchor">Login</a></p>
+            </div>
+          </form>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content> -->
+
+
+
+<ion-content [fullscreen]="true" color="light" class="signup-content">
+  <div class="main-header"></div>
+  <ion-grid>
+    <ion-row class="ionlist">
+      <ion-col size="12">
+        <div class="signup-form-container">
+          <form (ngSubmit)="SignUp(SignUpForm.value)" #postForm="ngForm">
+            <div [formGroup]="SignUpForm">
+              <ion-item class="input-item">
+                <!-- Person Icon -->
+                <ion-icon slot="start" name="person-outline" class="icon"></ion-icon>
+                <ion-label position="floating">Username</ion-label>
+                <ion-input formControlName="username"></ion-input>
+              </ion-item>
+            </div>
+
+            <div [formGroup]="SignUpForm">
+              <ion-item class="input-item">
+                <!-- Lock Icon -->
+                <ion-icon slot="start" name="lock-closed-outline" class="icon"></ion-icon>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+              </ion-item>
+            </div>
+
+            <div [formGroup]="SignUpForm">
+              <ion-item class="input-item">
+                <!-- Lock Icon for Confirm Password -->
+                <ion-icon slot="start" name="lock-closed-outline" class="icon"></ion-icon>
+                <ion-label position="floating">Confirm Password</ion-label>
+                <ion-input type="password" formControlName="confirmPassword"></ion-input>
+              </ion-item>
+            </div>
+            <br>
+            <ion-button type="submit" shape="round" expand="block" class="signup-button">Submit</ion-button>
+      
+            <div class="signup-link">
+              <p>Already have an account? <a (click)="Login()" class="signup-anchor">Login</a></p>
+            </div>
+          </form>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

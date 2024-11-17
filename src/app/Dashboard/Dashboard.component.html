@@ -1,0 +1,161 @@
+<ion-header>
+  <ion-item lines="none">
+    <ion-toggle slot="start" (ionChange)='toggleTheme($event)'></ion-toggle>
+    <ion-avatar slot="end" id="avatar">
+      <img src="assets/image/copywriter-digital-avatar-generative-ai_934475-9260.jpg" />
+    </ion-avatar>
+  </ion-item>
+</ion-header>
+
+<ion-popover trigger="avatar" side="bottom" alignment="end" dismissOnSelect="true">
+  <ng-template>
+    <ion-list class="popover-list">
+      <ion-item button class="popover-item">
+        <ion-icon name="person-circle-outline" slot="start" class="popover-icon"></ion-icon>
+        <ion-label class="userprofilelable" routerLink="/UserProfile">User Profile</ion-label>
+      </ion-item>
+      <ion-item button class="popover-item">
+        <ion-icon name="exit-outline" slot="start" class="popover-icon"></ion-icon>
+        <ion-label class="logoutlable" routerLink="/login">Logout</ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-template>
+</ion-popover>
+
+<ion-content [fullscreen]="true" color="light">
+  <div class="main-header"></div>
+  <ion-grid>
+    <div class="cash-flow">
+      <h2 style="font-size: 50px;">₹{{ mainBalance }}</h2>
+      <ion-chip><b style="color: white; font-size:16px;">MAIN BALANCE</b></ion-chip>
+    </div>
+    <ion-row class="ion-margin-horizontal" style="margin-top: 32px;">
+      <ion-col>
+        <ion-card class="ionCard" id="open-modal">
+          <ion-card-header>
+            <div class="card-contents">
+              <b style="font-size:18px;font-weight:bolder;">Add Expense</b>
+              <img style="margin-left: -7px ;" src="assets/image/—Pngtree—cash banknotes money bag cartoon_8286059.png" class="balance-icon" />
+            </div>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <ion-card class="ionCard" id="open-modals">
+          <ion-card-header>
+            <div class="card-content">
+              <b style="font-size:18px;font-weight:bolder;">Add Balance</b>
+              <img src="assets/image/icons8-money-48.png" class="balance-icon" />
+            </div>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+<br>
+<br>
+<div>
+  <ion-searchbar animated="true" placeholder="Search transaction history"></ion-searchbar>
+  <ion-list-header>
+    <ion-label>RECENT TRANSACTIONS</ion-label>
+  </ion-list-header>
+</div>
+<div style="max-height: 300px; overflow-y: auto; margin-top: 10px;">
+  <ion-list>
+    <ion-item lines="none" *ngFor="let expense of expenses">
+      <ion-icon slot="start" name="cash" color="primary"></ion-icon>
+      <b style="font-size: 18px;">{{ expense.name }}</b>
+      <p style="font-weight: bold;color: red; font-size: 20px;" slot="end">
+        ₹{{ expense.amount }}
+      </p>
+    </ion-item>
+  </ion-list>
+</div>
+
+
+  <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+    <ng-template>
+      <ion-header class="main-header">
+        <ion-toolbar class="main-toolbar">
+          <ion-title><ion-label>Add Expense</ion-label></ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="dismiss()">X</ion-button>
+        </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+      <ion-content class="ion-padding">
+        <form (ngSubmit)="addExpense()">
+          <ion-item>
+            <ion-label position="floating">Expense Name</ion-label>
+            <ion-input type="text" [(ngModel)]="expenseName" name="expenseName" placeholder="Expense Name"></ion-input>
+          </ion-item>
+          <br>
+          <ion-item>
+            <ion-label position="floating">Amount</ion-label>
+            <ion-input type="text" [(ngModel)]="expenseAmount" name="expenseAmount" placeholder="Amount"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-button style="float: right;width: 1000px;" type="submit" class="login-button">Submit</ion-button>
+          </ion-item>
+        </form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal trigger="open-modals" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+    <ng-template>
+      <ion-header class="main-header">
+        <ion-toolbar class="main-toolbar">
+          <ion-title><ion-label>Main Balance</ion-label></ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="dismiss()">X</ion-button>
+        </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+      <ion-content class="ion-padding">
+        <form (ngSubmit)="addMainBalance()">
+          <ion-item>
+            <ion-label position="floating">Amount</ion-label>
+            <ion-input type="text" [(ngModel)]="balanceAmount" name="balanceAmount" placeholder="Expense Name"></ion-input>
+          </ion-item>
+          <br>
+          <ion-item>
+            <ion-label position="floating">Status</ion-label>
+            <ion-input type="text" [(ngModel)]="balanceStatus" name="balanceStatus" placeholder="Status"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-button style="float: right;width: 1000px;" type="submit" class="login-button">Submit</ion-button>
+          </ion-item>
+        </form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>
+
+<ion-footer>
+  <ion-item lines="none">
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="home"  routerLink="/dashboard">
+          <ion-icon name="home-outline"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="transactions" routerLink="/TransactionList">
+          <ion-icon name="receipt-outline"></ion-icon>
+          <ion-label>Transactions</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="userProfile" routerLink="/UserProfile">
+          <ion-icon type="image" name="person-outline"></ion-icon>
+          <ion-label>User Profile</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="support" routerLink="/chatwindowComponent">
+          <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+          <ion-label>Chat Support</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-item>
+</ion-footer>

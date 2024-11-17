@@ -1,0 +1,20 @@
+<ion-header class="main-header">
+  <ion-toolbar class="main-toolbar">
+    <ion-toggle slot="end" (ionChange)='toggleTheme($event)'></ion-toggle>
+    <ion-buttons slot="start">
+      <ion-button (click)="back()" style="color: white;">Back</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<div class="chat-window">
+  <div class="messages">
+    <app-chat-message *ngFor="let message of messages" [message]="message"></app-chat-message>
+  </div>
+  <div class="input" style="width: 90%;">
+    <input [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" placeholder="Type your message...">
+    <button (click)="sendMessage()">
+      <i class="fa-solid fa-circle-right" style="bottom: 11px;"></i>
+    </button>
+  </div>
+</div>

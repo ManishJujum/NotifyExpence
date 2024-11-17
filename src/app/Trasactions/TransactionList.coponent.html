@@ -1,0 +1,26 @@
+<ion-header class="main-header">
+  <ion-toolbar class="main-toolbar">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()" style="color: white;">Back</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-searchbar animated="true" placeholder="Search transaction history"></ion-searchbar>
+<ion-content>
+    <ion-list class="transaction-list">
+      <ion-card class="transaction-card" *ngFor="let transaction of transactions">
+        <ion-card-header class="card-header">
+          <ion-label class="transaction-header">
+            <h2>{{transaction.description}}</h2>
+            <p class="transaction-date">{{transaction.date}}</p>
+          </ion-label>
+          <ion-label class="transaction-amount" 
+            [ngClass]="{'positive': transaction.amount >= 0, 'negative': transaction.amount < 0}">
+            {{ transaction.amount | currency:'USD':true }}
+          </ion-label>
+        </ion-card-header>
+      </ion-card>
+    </ion-list>
+  </ion-content>
+  

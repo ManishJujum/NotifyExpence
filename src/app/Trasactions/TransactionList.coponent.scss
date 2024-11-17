@@ -1,0 +1,70 @@
+.transaction-list {
+  padding: 0;
+  margin: 0;
+}
+
+.transaction-card {
+  margin: 10px 0;  /* Added margin-top and margin-bottom to create space between records */
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.transaction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transaction-header h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.transaction-date {
+  font-size: 12px;
+  color: #888;
+}
+
+.transaction-amount {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.transaction-amount.positive {
+  color: #4caf50;
+}
+
+.transaction-amount.negative {
+  color: #f44336;
+}
+
+.transaction-details {
+  padding: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+
+ion-header {
+  background: transparent;
+  ion-item {
+    --background: transparent;
+    ion-avatar {
+      background: white;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+<!-- <ion-content [fullscreen]="true" color="light" class="login-content">
+  <div class="main-header"></div>
+  <ion-grid>
+    <ion-row class="ionlist">
+      <ion-col size="12">
+        <div class="login-form-container">
+          <form (ngSubmit)="SignIn(loginForm.value)" #postForm="ngForm">
+            <div [formGroup]="loginForm">
+              <ion-item class="input-item">
+                <ion-icon slot="start" name="person-outline" class="icon"></ion-icon>
+                <ion-label position="floating">Username</ion-label>
+                <ion-input formControlName="username"></ion-input>
+              </ion-item>
+            </div>
+
+            <div [formGroup]="loginForm">
+              <ion-item class="input-item">
+                <ion-icon slot="start" name="lock-closed-outline" class="icon"></ion-icon>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+              </ion-item>
+            </div>
+
+            <ion-button type="submit" shape="round" expand="block" class="login-button">Login</ion-button>
+
+            <div class="signup-link">
+              <p>Don't have an account? <a (click)="SignUp()" class="signup-anchor">Sign Up</a></p>
+            </div>
+          </form>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content> -->
+
+
+<ion-content [fullscreen]="true" color="light" class="login-content">
+  <div class="main-header">
+
+    <!-- <img src="assets/image/icons8-wallet-48.png" style="width: 24%;height: 37%;border-radius: 72px;
+              margin-left: 39%;margin-top: 19%;"/> -->
+  </div>
+  <ion-grid>
+    <ion-row class="ionlist">
+      <ion-col size="12">
+        <div class="login-form-container">
+          <form (ngSubmit)="SignIn(loginForm.value)" #postForm="ngForm">
+            <div [formGroup]="loginForm">
+              <ion-item class="input-item">
+                <!-- Person Icon -->
+                <ion-icon slot="start" name="person-outline" class="icon"></ion-icon>
+                <ion-label position="floating">Username</ion-label>
+                <ion-input formControlName="username"></ion-input>
+              </ion-item>
+            </div>
+
+            <div [formGroup]="loginForm">
+              <ion-item class="input-item">
+                <!-- Lock Icon -->
+                <ion-icon slot="start" name="lock-closed-outline" class="icon"></ion-icon>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+              </ion-item>
+            </div>
+
+            <ion-button type="submit" shape="round" expand="block" class="login-button">Login</ion-button>
+
+            <div class="signup-link">
+              <p>Don't have an account? <a (click)="SignUp()" class="signup-anchor">Sign Up</a></p>
+            </div>
+          </form>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>   
+

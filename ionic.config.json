@@ -1,0 +1,7 @@
+{
+  "name": "Manage_Budget_App",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
