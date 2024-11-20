@@ -43,3 +43,17 @@ The **Expense Tracker Mobile Application** allows users to track their expenses,
 ![add main balance](https://github.com/user-attachments/assets/fc55c519-0862-436d-8c8f-fed14cb16d52)
 ![add expense](https://github.com/user-attachments/assets/89fc086f-6c3b-4731-b8b7-1a3a5b26f2f2)
 
+
+
+---
+
+## **Thanks**
+
+If you find this repository useful, then consider to leave a ⭐.
+
+Connect with me
+
+👉 LinkedIn: https://www.linkedin.com/in/manish-jujum-706190191
+
+Thanks a lot 🙂🙂
+
