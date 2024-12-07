@@ -1,4 +1,4 @@
-# Notify Expense (Expense Tracker0 Mobile Application
+# Notify Expense (Expense Tracker Mobile Application
 
 ### Overview
 The **Expense Tracker Mobile Application** allows users to track their expenses, interact with a chatbot, view transaction history, and toggle dark mode for a better user experience. Built with **Angular**, **Ionic**, **CSS**, and **HTML**, this app provides a seamless and efficient way to manage personal finances on mobile devices.
